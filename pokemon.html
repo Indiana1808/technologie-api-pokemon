@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+</head>
+<body>
+    <h1>
+        Insérer dans le table
+    </h1>
+    <label for="id">L'id du pokemon</label>
+
+      <input type="text" id="id" name="id">
+   
+    <label for="id">Numéro du pokédex</label>
+
+      <input type="text" id="id" name="id">
+
+    <label for="id">Nom</label>
+      <input type="text" id="id" name="id">
+
+    <label for="id">Taille</label>
+      <input type="text" id="id" name="id">
+
+    <label for="id">Poids</label>
+      <input type="text" id="id" name="id">
+
+    <label for="id">Statistiques de base</label>
+      <input type="text" id="id" name="id">
+      
+    <label for="id">Image</label>
+      <input type="text" id="id" name="id">
+    
+    <label for="id">Type</label>
+      <input type="text" id="id" name="id">
+    
+    <label for="id">Compétences</label>
+      <input type="text" id="id" name="id">
+    
+    <h1>
+        <button>Insérer</button>
+    </h1>
+   
+
+    <h1>Table des Pokemons</h1>
+    <h1>
+        Inserer
+    </h1>
+      <label for="id">L'id du pokemon</label>
+      <br>
+      <input type="text" id="id" name="id">
+      <br>
+      <button>Filtrer</button>
+
+    
+    
+    <table>
+        <tr>
+            <th>L'id du pokemon</th>
+            <th>Numéro du pokédex</th>
+            <th>Nom</th>
+            <th>Taille</th>
+            <th>Poids</th>
+            <th>Statistiques de base</th>
+            <th>Image</th>
+            <th>Type</th>
+            <th>Compétences</th>
+            <th>Supprimer</th>
+            <th>Modifier</th>
+        </tr>
+        {% for poke in pokemon %}
+        <tr>
+            <td>{{ poke.id_pokemon }}</td>
+            <td>{{ poke.numero_du_pokedex }}</td>
+            <td>{{ poke.nom }}</td>
+            <td>{{ poke.taille }}</td>
+            <td>{{ poke.poids }}</td>
+            <td>{{ poke.statistique_de_base }}</td>
+            <td><img src="{{ poke.image }}"alt="Image de {{ poke.nom }}"width="200" height="200"></td>
+            <td>{{ poke.type_id }}</td>
+            <td>{{ poke.competence_id }}</td>
+            <td>
+                <button>Supprimer</button>
+                
+            </td>
+            <td>
+                <button>Modifier</button>
+                
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
